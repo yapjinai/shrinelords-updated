@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 import App from './App';
 import About from './containers/About'
 import Shrines from './containers/Shrines'
 import Creation from './components/Creation'
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-
 
 ReactDOM.render((
   <Router>
