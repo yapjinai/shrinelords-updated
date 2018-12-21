@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../assets/css/Navbar.css'
+
 import Linkbar from './Linkbar'
 
 class Navbar extends Component {

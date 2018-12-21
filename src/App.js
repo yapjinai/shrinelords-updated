@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Doors from './components/Doors';
+import './assets/css/App.css'
+
 import Shrine from './containers/Shrine';
-import Floor from './components/Floor';
-import Background from './components/Background';
-import Navbar from './components/Navbar';
-import Editbar from './components/Editbar';
+
 import ErrorPage from './components/ErrorPage';
 
-import './assets/css/App.css'
+import Navbar from './components/Navbar';
+import Editbar from './components/Editbar';
+
+import Doors from './components/Doors';
+import Floor from './components/Floor';
+import Background from './components/Background';
 
 const apiURL = 'http://localhost:3000'
 let shrineId

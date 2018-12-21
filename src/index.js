@@ -6,9 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import App from './App';
-import About from './containers/About'
+import About from './components/About'
 import Shrines from './containers/Shrines'
-import Creation from './components/Creation'
+// import Creation from './components/Creation'
+import Create from './components/Create'
 
 ReactDOM.render((
   <Router>
@@ -16,7 +17,7 @@ ReactDOM.render((
       <Route exact path='/' component={Shrines} />
       <Route exact path='/shrines/:id' component={App} />
       <Route exact path='/about' component={About} />
-      <Route exact path='/creation' component={Creation} />
+      <Route exact path='/create' component={Create} />
     </React.Fragment>
   </Router>), document.getElementById('root'));
 

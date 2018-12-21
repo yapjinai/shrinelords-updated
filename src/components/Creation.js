@@ -18,6 +18,21 @@ export default class Creation extends Component {
     .then(backs => this.setState({backs: backs}))
   }
 
+  render(){
+    return(
+      <div>
+          <p className="creationtext">Create a shrine...</p>
+          <input id='shrineinput' type='text' placeholder='shrine name'></input><br></br>
+          <button className="setting" onClick={this.previousback}>Previous shrine setting</button>
+          <button className="setting" onClick={this.nextback}>Next shrine setting</button><br></br>
+          <button className="setting" onClick={this.newShrine}>Create!</button>
+        {this.state.backs.length ? this.background(this.state.backs[this.state.back_index].video) : null}
+      </div>
+    )
+  }
+
+  /////////////////////
+
   nextback = () => {
     let backvideo = document.getElementById('creationvideo')
     backvideo.pause()
@@ -79,20 +94,5 @@ export default class Creation extends Component {
         </video>
       </div>
     )}
-
-  render(){
-    return(
-      <div>
-        <center>
-          <p className="creationtext">Create a shrine...</p>
-          <input id='shrineinput' type='text' placeholder='shrine name'></input><br></br>
-          <button className="setting" onClick={this.previousback}>Previous shrine setting</button>
-          <button className="setting" onClick={this.nextback}>Next shrine setting</button><br></br>
-          <button className="setting" onClick={this.newShrine}>Create!</button>
-        </center>
-        {this.state.backs.length ? this.background(this.state.backs[this.state.back_index].video) : null}
-      </div>
-    )
-  }
 
 }

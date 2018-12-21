@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import ItembarItem from './ItembarItem'
 import '../assets/css/Itembar.css'
+
+import ItembarItem from './ItembarItem'
 
 class Itembar extends Component {
   render() {
