@@ -1,0 +1,55 @@
+STATE
+
+SHRINES: {
+  shrines: [],
+  display_shrines:[],
+  gridclass: "shrinegrid"
+},
+ABOUT: {},
+CREATION: {
+  backs: [],
+  back_index: 0
+},
+APP: {
+  shrine: {},
+  offerings: [],
+  back: {},
+  items: [],
+  mouseMode: 'move',
+  shrineExists: true
+}
+
+  ERRORPAGE: {},
+  EDITBAR: {
+    query: '',
+    originalItems: props.items,
+    filteredItems: props.items
+  }
+
+    TOOLBAR,
+    ITEMBAR,
+
+  ,
+  NAVBAR: {
+
+  }
+
+    LINKBAR
+
+  ,
+  SHRINE: {
+
+  }
+
+    OFFERING
+
+  ,
+  DOORS: {
+
+  },
+  FLOOR: {
+
+  },
+  BACKGROUND: {
+
+  },
