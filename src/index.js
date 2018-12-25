@@ -12,7 +12,7 @@ import rootReducer from './reducers'
 import './index.css';
 
 // Components
-import App from './App';
+import Show from './Show';
 import About from './pages/About'
 import ShrinesIndex from './pages/ShrinesIndex'
 import Create from './pages/Create'
@@ -26,7 +26,7 @@ ReactDOM.render((
     <Router>
       <React.Fragment>
         <Route exact path='/' component={ShrinesIndex} />
-        <Route exact path='/shrines/:id' component={App} />
+        <Route exact path='/shrines/:id' component={Show} />
         <Route exact path='/about' component={About} />
         <Route exact path='/create' component={Create} />
       </React.Fragment>

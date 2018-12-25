@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import './assets/css/App.css'
+import './assets/css/Show.css'
+
+// React-redux
+import { connect } from 'react-redux'
+import {
+} from './actions'
 
 import Shrine from './pages/Shrine';
-
 import ErrorPage from './pages/ErrorPage';
 
 import Navbar from './components/Navbar';
@@ -12,40 +16,41 @@ import Doors from './components/Doors';
 import Floor from './components/Floor';
 import Background from './components/Background';
 
+/////////////////
 const apiURL = 'http://localhost:3000'
 let shrineId
 
-class App extends Component {
+class Show extends Component {
   constructor(props) {
     super(props)
     shrineId = props.match.params.id
-    this.state = {
-      shrine: {},
-      offerings: [],
-      back: {},
-      items: [],
-      mouseMode: 'move',
-      shrineExists: true
-    }
+    // this.state = {
+    //   shrine: {},
+    //   offerings: [],
+    //   back: {},
+    //   items: [],
+    //   mouseMode: 'move',
+    //   shrineExists: true
+    // }
   }
 
   render() {
     if (this.state.shrineExists) {
       return (
-        <div className="App">
+        <div className="Show">
           <Editbar
-            items={this.state.items}
-            updateMouseMode={this.updateMouseMode}
+            // items={this.state.items}
+            // updateMouseMode={this.updateMouseMode}
             createOffering={this.createOffering}
           />
           <Navbar />
           <Doors />
           <Shrine
             updateCoordinates={this.updateCoordinates}
-            shrine={this.state.shrine}
-            offerings={this.state.offerings}
+            // shrine={this.state.shrine}
+            // offerings={this.state.offerings}
 
-            mouseMode={this.state.mouseMode}
+            // mouseMode={this.state.mouseMode}
             deleteOffering={this.deleteOffering}
             moveUp={this.moveUp}
             moveDown={this.moveDown}
@@ -53,7 +58,7 @@ class App extends Component {
             moveBottom={this.moveBottom}
           />
           <Floor />
-          {!!this.state.back.video ? <Background back={this.state.back.video}/> : null}
+          // {!!this.state.back.video ? <Background back={this.state.back.video}/> : null}
         </div>
       )
     }
@@ -288,4 +293,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Show;

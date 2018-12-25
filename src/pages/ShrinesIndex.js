@@ -24,9 +24,8 @@ class ShrinesIndex extends Component {
       <div className="container">
         {this.toAbout()}
         <div className="ShrinesIndex">
-          <div className={this.state.gridclass}>
             <ul>
-              {this.state.shrines.map(s => {
+              {this.props.shrines.map(s => {
                 return (
                   <li>
                     <Link to={`/shrines/${s.id}`}>
@@ -37,7 +36,6 @@ class ShrinesIndex extends Component {
               })}
             </ul>
           </div>
-        </div>
         {this.toCreation()}
       </div>
     )
