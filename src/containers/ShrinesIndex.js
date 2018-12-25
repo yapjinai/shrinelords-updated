@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import '../assets/css/Shrines.css'
+import '../assets/css/ShrinesIndex.css'
 
 const shrinesURL = 'http://localhost:3000/api/v1/shrines'
 
-export default class Shrines extends Component {
+export default class ShrinesIndex extends Component {
   state = {
     shrines: [],
     display_shrines:[],
@@ -135,7 +135,7 @@ export default class Shrines extends Component {
       <div className="container">
         {this.previousShrines()}
         {this.toAbout()}
-        <div className="Shrines">
+        <div className="ShrinesIndex">
           <div className={this.state.gridclass}>
             {this.state.display_shrines.map(shrine => this.shrinePreview(shrine))}
           </div>

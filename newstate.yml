@@ -1,0 +1,36 @@
+# STATE
+
+indexState: {
+  allShrines: [],
+  allBacks: []
+},
+createState: {
+    shrineName: '',
+    backgroundId: 0,
+},
+showState: {
+  shrine: {},
+},
+  editbarState: {
+    mouseMode: 'move'
+
+    # ITEMBAR: {
+      query: '',
+      originalItems: [],
+      filteredItems: []
+      # }
+  },
+navbarState: {
+ expanded: false
+},
+
+# how to do offerings in redux? state for each offering seems unwieldy
+# OFFERING: {
+#   posX: 0,
+#   posY: 0,
+#   changeX: 0,
+#   changeY: 0,
+#   elmnt: null,
+#   style: JSON.parse(this.props.offering.style),
+#   item: {},
+# }
