@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './assets/css/App.css'
 
-import Shrine from './containers/Shrine';
+import Shrine from './pages/Shrine';
 
-import ErrorPage from './components/ErrorPage';
+import ErrorPage from './pages/ErrorPage';
 
 import Navbar from './components/Navbar';
 import Editbar from './components/Editbar';

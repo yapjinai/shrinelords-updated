@@ -1,4 +1,4 @@
-const mouseMode = (state = 'move', action) => {
+export const mouseMode = (state = 'move', action) => {
   switch (action.type) {
     case 'SET_MOUSE_MODE':
       return action.payload
@@ -10,7 +10,7 @@ const mouseMode = (state = 'move', action) => {
 //////////////////////////
 // itembar state
 
-const query = (state = '', action) => {
+export const query = (state = '', action) => {
   switch (action.type) {
     case 'SET_QUERY':
       return action.payload
@@ -19,7 +19,7 @@ const query = (state = '', action) => {
   }
 }
 
-const originalItems = (state = [], action) => {
+export const originalItems = (state = [], action) => {
   switch (action.type) {
     case 'SET_ORIGINAL_ITEMS':
       return action.payload
@@ -28,7 +28,7 @@ const originalItems = (state = [], action) => {
   }
 }
 
-const filteredItems = (state = [], action) => {
+export const filteredItems = (state = [], action) => {
   switch (action.type) {
     case 'SET_FILTERED_ITEMS':
       return action.payload
@@ -37,4 +37,4 @@ const filteredItems = (state = [], action) => {
   }
 }
 
-export { mouseMode, query, originalItems, filteredItems }
+// export { mouseMode, query, originalItems, filteredItems }

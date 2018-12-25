@@ -1,4 +1,4 @@
-const expanded = (state = false, action) => {
+export const expanded = (state = false, action) => {
   switch (action.type) {
     case 'TOGGLE_NAVBAR':
       return !state
@@ -7,4 +7,4 @@ const expanded = (state = false, action) => {
   }
 }
 
-export { expanded }
+// export { expanded }

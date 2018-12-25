@@ -1,4 +1,4 @@
-const shrine = (state = {}, action) => {
+export const shrine = (state = {}, action) => {
   switch (action.type) {
     case 'SET_SHRINE':
       return action.payload
@@ -7,4 +7,4 @@ const shrine = (state = {}, action) => {
   }
 }
 
-export { shrine }
+// export { shrine }

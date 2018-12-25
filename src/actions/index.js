@@ -1,47 +1,47 @@
 //////////////////////
 // index
-export const allShrines = (payload) => ({
+export const setAllShrines = (payload) => ({
   type: 'SET_ALL_SHRINES',
   payload: payload
 })
-export const allBacks = (payload) => ({
+export const setAllBacks = (payload) => ({
   type: 'SET_ALL_BACKS',
   payload: payload
 })
 
 //////////////////////
 // create
-export const shrineName = (payload) => ({
+export const setShrineName = (payload) => ({
   type: 'SET_SHRINE_NAME',
   payload: payload
 })
-export const backgroundId = (payload) => ({
+export const setBackgroundId = (payload) => ({
   type: 'SET_BACKGROUND_ID',
   payload: payload
 })
 
 //////////////////////
 // show
-export const shrine = (payload) => ({
+export const setShrine = (payload) => ({
   type: 'SET_SHRINE',
   payload: payload
 })
 
 //////////////////////
 // editbar
-export const mouseMode = (payload) => ({
+export const setMouseMode = (payload) => ({
   type: 'SET_MOUSE_MODE',
   payload: payload
 })
-export const query = (payload) => ({
+export const setQuery = (payload) => ({
   type: 'SET_QUERY',
   payload: payload
 })
-export const originalItems = (payload) => ({
+export const setOriginalItems = (payload) => ({
   type: 'SET_ORIGINAL_ITEMS',
   payload: payload
 })
-export const filteredItems = (payload) => ({
+export const setFilteredItems = (payload) => ({
   type: 'SET_FILTERED_ITEMS',
   payload: payload
 })
@@ -87,6 +87,6 @@ export const filteredItems = (payload) => ({
 
 //////////////////////
 // navbar
-export const expanded = () => ({
+export const toggleExpanded = () => ({
   type: 'TOGGLE_NAVBAR'
 })

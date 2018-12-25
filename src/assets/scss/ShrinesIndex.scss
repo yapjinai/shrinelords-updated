@@ -111,7 +111,7 @@ text-decoration: inherit;
   flex-wrap: wrap;
   display: flex;
   transition: .01s;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .shrinegrid_fading_out {
@@ -126,7 +126,7 @@ text-decoration: inherit;
   flex-wrap: wrap;
   display: flex;
   transition: .4s;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .shrinegrid_fading_in_back {
@@ -141,7 +141,7 @@ text-decoration: inherit;
   flex-wrap: wrap;
   display: flex;
   transition: .01s;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .shrinegrid_fading_out_back {
@@ -156,7 +156,7 @@ text-decoration: inherit;
   flex-wrap: wrap;
   display: flex;
   transition: .4s;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .minishrine {
@@ -164,7 +164,7 @@ text-decoration: inherit;
   width: 480px;
   border-radius: 120px;
   margin: 2%;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .border {
@@ -176,7 +176,7 @@ text-decoration: inherit;
   background: none;
   display: inline;
   z-index: 1;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 p {

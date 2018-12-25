@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 // React Router
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 // Redux
-// import { Provider } from 'react-redux'
+import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import rootReducer from './reducers'
 // CSS
@@ -13,15 +13,16 @@ import './index.css';
 
 // Components
 import App from './App';
-import About from './components/About'
-import ShrinesIndex from './containers/ShrinesIndex'
-import Create from './components/Create'
+import About from './pages/About'
+import ShrinesIndex from './pages/ShrinesIndex'
+import Create from './pages/Create'
 
 /////////////////////
 
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render((
+  <Provider store={store}>
     <Router>
       <React.Fragment>
         <Route exact path='/' component={ShrinesIndex} />
@@ -30,11 +31,7 @@ ReactDOM.render((
         <Route exact path='/create' component={Create} />
       </React.Fragment>
     </Router>
+  </Provider>
   ), document.getElementById('root'));
 
 serviceWorker.unregister();
-
-// <Provider store={store}>
-
-
-// </Provider>
