@@ -10,6 +10,17 @@ export default class Create extends Component {
     return(
       <div className="Create">
         <h1>Create</h1>
+
+        <form id='createForm'>
+          <label
+            htmlFor="shrineName"
+          />
+          <input
+            type="text"
+            name="shrineName"
+            value=""
+          />
+        </form>
       </div>
     )
   }

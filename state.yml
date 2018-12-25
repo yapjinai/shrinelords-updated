@@ -1,8 +1,8 @@
-STATE
+# STATE
 
 SHRINES: {
   shrines: [],
-  display_shrines:[],
+  display_shrines: [],
   gridclass: "shrinegrid"
 },
 ABOUT: {},
@@ -17,39 +17,39 @@ APP: {
   items: [],
   mouseMode: 'move',
   shrineExists: true
-}
+},
 
   ERRORPAGE: {},
   EDITBAR: {
     query: '',
     originalItems: props.items,
     filteredItems: props.items
-  }
+  },
 
-    TOOLBAR,
-    ITEMBAR,
+    TOOLBAR: {},
+    ITEMBAR: {},
 
   ,
   NAVBAR: {
+    expanded: false
+  },
 
-  }
-
-    LINKBAR
+    LINKBAR: {}
 
   ,
-  SHRINE: {
+  SHRINE: {},
 
-  }
-
-    OFFERING
+    OFFERING: {
+      posX: 0,
+      posY: 0,
+      changeX: 0,
+      changeY: 0,
+      elmnt: null,
+      style: JSON.parse(this.props.offering.style),
+      item: {},
+    }
 
   ,
-  DOORS: {
-
-  },
-  FLOOR: {
-
-  },
-  BACKGROUND: {
-
-  },
+  DOORS: {},
+  FLOOR: {},
+  BACKGROUND: {},
