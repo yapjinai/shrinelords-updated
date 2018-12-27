@@ -4,6 +4,7 @@ import './assets/css/Show.css'
 // React-redux
 import { connect } from 'react-redux'
 import {
+  setShrine
 } from './actions'
 
 import Shrine from './pages/Shrine';
@@ -20,6 +21,7 @@ import Background from './components/Background';
 const apiURL = 'http://localhost:3000'
 let shrineId
 
+
 class Show extends Component {
   constructor(props) {
     super(props)
@@ -32,41 +34,14 @@ class Show extends Component {
     //   mouseMode: 'move',
     //   shrineExists: true
     // }
+    console.log(props);
   }
 
   render() {
     // if (this.state.shrineExists) {
-      return (
-        <div className="Show">
-          <Editbar
-            // items={this.state.items}
-            // updateMouseMode={this.updateMouseMode}
-            createOffering={this.createOffering}
-          />
-          <Navbar />
-          <Doors />
-          <Shrine
-            updateCoordinates={this.updateCoordinates}
-            // shrine={this.state.shrine}
-            // offerings={this.state.offerings}
-
-            // mouseMode={this.state.mouseMode}
-            deleteOffering={this.deleteOffering}
-            moveUp={this.moveUp}
-            moveDown={this.moveDown}
-            moveTop={this.moveTop}
-            moveBottom={this.moveBottom}
-          />
-          <Floor />
-          <Background back={this.state.back.video}/>
-        </div>
-      )
-    // }
-    // else {
-    //   return (
-    //     <ErrorPage />
-    //   )
-    // }
+    return (
+      this.props.shrine.back ? this.renderShrine() : <ErrorPage />
+    )
   }
 
   componentDidMount() {
@@ -77,18 +52,39 @@ class Show extends Component {
 
   //////////////////////////////////
 
+  renderShrine = () => {
+    return (
+      <div className="Show">
+        <Editbar
+          // items={this.state.items}
+          // updateMouseMode={this.updateMouseMode}
+          createOffering={this.createOffering}
+        />
+        <Navbar />
+        <Doors />
+        <Shrine
+          updateCoordinates={this.updateCoordinates}
+          // shrine={this.state.shrine}
+          // offerings={this.state.offerings}
+
+          // mouseMode={this.state.mouseMode}
+          deleteOffering={this.deleteOffering}
+          moveUp={this.moveUp}
+          moveDown={this.moveDown}
+          moveTop={this.moveTop}
+          moveBottom={this.moveBottom}
+        />
+        <Floor />
+        <Background back={this.props.shrine.back.video}/>
+      </div>
+    )
+  }
+
   loadShrine = () => {
     fetch(`${apiURL}/api/v1/shrines/${shrineId}`)
     .then(res => res.json())
     .then(shrine => {
-      if (shrine) {
-        this.loadShrineOfferings(shrine)
-      }
-      else {
-        this.setState({
-          shrineExists: false
-        })
-      }
+      this.props.setShrine(shrine)
     })
   }
 
@@ -160,10 +156,10 @@ class Show extends Component {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        shrine_id: this.state.shrine.id,
+        shrine_id: this.props.shrine.id,
         item_id: item.id,
         style: `{"top":"40%","left":"40%"}`,
-        zIndex: this.state.offerings.length
+        zIndex: this.props.shrine.offerings.length
       })
     })
     .then(() => this.loadShrine())
@@ -291,6 +287,24 @@ class Show extends Component {
       this.arrangeOfferingsByZIndex(newOfferings)
     }
   }
-}
+} // end component
 
-export default Show;
+///////////////////////
+// redux
+///////////////////////
+
+const mapStateToProps = (state) => ({
+  shrine: state.shrine
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setShrine: (shrine) => dispatch(setShrine(shrine))
+})
+
+const connectedShow = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Show)
+
+
+export default connectedShow;
