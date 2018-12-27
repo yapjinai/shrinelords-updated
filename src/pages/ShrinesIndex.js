@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import {
   setAllShrines,
   setAllBacks
-} from './actions'
+} from '../actions'
 
 ////////////////////
 const backsURL = "http://localhost:3000/api/v1/backs"
@@ -25,7 +25,7 @@ class ShrinesIndex extends Component {
         {this.toAbout()}
         <div className="ShrinesIndex">
             <ul>
-              {this.props.shrines.map(s => {
+              {this.props.allShrines.map(s => {
                 return (
                   <li>
                     <Link to={`/shrines/${s.id}`}>
@@ -46,6 +46,7 @@ class ShrinesIndex extends Component {
     .then(r => r.json())
     .then(res => {
       this.props.setAllShrines(res)
+      console.log(this.props.allShrines);
     })
   }
 

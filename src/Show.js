@@ -35,7 +35,7 @@ class Show extends Component {
   }
 
   render() {
-    if (this.state.shrineExists) {
+    // if (this.state.shrineExists) {
       return (
         <div className="Show">
           <Editbar
@@ -58,15 +58,15 @@ class Show extends Component {
             moveBottom={this.moveBottom}
           />
           <Floor />
-          // {!!this.state.back.video ? <Background back={this.state.back.video}/> : null}
+          <Background back={this.state.back.video}/>
         </div>
       )
-    }
-    else {
-      return (
-        <ErrorPage />
-      )
-    }
+    // }
+    // else {
+    //   return (
+    //     <ErrorPage />
+    //   )
+    // }
   }
 
   componentDidMount() {

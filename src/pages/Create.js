@@ -6,14 +6,14 @@ import { connect } from 'react-redux'
 import {
   setShrineName,
   setBackgroundId
-} from './actions'
+} from '../actions'
 
 /////////////
 
 const backsURL = "http://localhost:3000/api/v1/backs"
 const shrinesURL = "http://localhost:3000/api/v1/shrines"
 
-export default class Create extends Component {
+class Create extends Component {
 
   render(){
     return(
@@ -28,7 +28,7 @@ export default class Create extends Component {
           <input
             type="text"
             name="shrineName"
-            value={props.shrineName}
+            value={this.props.shrineName}
           />
           <input
             type="submit"

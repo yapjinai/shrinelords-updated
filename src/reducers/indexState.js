@@ -1,7 +1,7 @@
 const allShrines = (state = [], action) => {
   switch (action.type) {
     case 'SET_ALL_SHRINES':
-      return action.allShrines
+      return action.payload
     default:
       return state
   }
@@ -10,7 +10,7 @@ const allShrines = (state = [], action) => {
 const allBacks = (state = [], action) => {
   switch (action.type) {
     case 'SET_ALL_BACKS':
-      return action.allBacks
+      return action.payload
     default:
       return state
   }
