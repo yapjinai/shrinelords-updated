@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import '../assets/css/Toolbar.css'
 
+// React-redux
+import { connect } from 'react-redux'
+import {
+  setMouseMode,
+} from '../actions'
+
 class Toolbar extends Component {
   render() {
     return(
@@ -66,7 +72,7 @@ class Toolbar extends Component {
 
   handleClick = (e) => {
     e.preventDefault()
-    this.props.updateMouseMode(e.target.name)
+    this.props.setMouseMode(e.target.name)
   }
 
   handleMouseOver = (e) => {
@@ -78,6 +84,23 @@ class Toolbar extends Component {
     const infoDiv = e.target.nextSibling
     infoDiv.classList.remove('display')
   }
-}
+} // end component
 
-export default Toolbar
+///////////////////////
+// redux
+///////////////////////
+
+const mapStateToProps = (state) => ({
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    setMouseMode: (mouseMode) => dispatch(setMouseMode(mouseMode)),
+})
+
+const connectedToolbar = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Toolbar)
+
+
+export default connectedToolbar;

@@ -1,44 +1,27 @@
 import React, { Component } from 'react';
-import './assets/css/Show.css'
+import '../assets/css/Show.css'
 
 // React-redux
 import { connect } from 'react-redux'
 import {
   setShrine
-} from './actions'
+} from '../actions'
 
-import Shrine from './pages/Shrine';
-import ErrorPage from './pages/ErrorPage';
+import ErrorPage from './ErrorPage';
 
-import Navbar from './components/Navbar';
-import Editbar from './components/Editbar';
+import Shrine from '../components/Shrine';
+import Navbar from '../components/Navbar';
+import Editbar from '../components/Editbar';
 
-import Doors from './components/Doors';
-import Floor from './components/Floor';
-import Background from './components/Background';
+import Doors from '../components/Doors';
+import Floor from '../components/Floor';
+import Background from '../components/Background';
 
 /////////////////
 const apiURL = 'http://localhost:3000'
-let shrineId
-
 
 class Show extends Component {
-  constructor(props) {
-    super(props)
-    shrineId = props.match.params.id
-    // this.state = {
-    //   shrine: {},
-    //   offerings: [],
-    //   back: {},
-    //   items: [],
-    //   mouseMode: 'move',
-    //   shrineExists: true
-    // }
-    console.log(props);
-  }
-
   render() {
-    // if (this.state.shrineExists) {
     return (
       this.props.shrine.back ? this.renderShrine() : <ErrorPage />
     )
@@ -46,7 +29,7 @@ class Show extends Component {
 
   componentDidMount() {
     this.loadShrine()
-    this.loadItems()
+    // this.loadItems()
     window.addEventListener('keydown', this.handleKeyDown)
   }
 
@@ -56,18 +39,12 @@ class Show extends Component {
     return (
       <div className="Show">
         <Editbar
-          // items={this.state.items}
-          // updateMouseMode={this.updateMouseMode}
           createOffering={this.createOffering}
         />
         <Navbar />
         <Doors />
         <Shrine
           updateCoordinates={this.updateCoordinates}
-          // shrine={this.state.shrine}
-          // offerings={this.state.offerings}
-
-          // mouseMode={this.state.mouseMode}
           deleteOffering={this.deleteOffering}
           moveUp={this.moveUp}
           moveDown={this.moveDown}
@@ -81,6 +58,7 @@ class Show extends Component {
   }
 
   loadShrine = () => {
+    const shrineId = this.props.match.params.id
     fetch(`${apiURL}/api/v1/shrines/${shrineId}`)
     .then(res => res.json())
     .then(shrine => {
@@ -138,15 +116,15 @@ class Show extends Component {
     this.updateStateZIndex(newOfferings)
   }
 
-  loadItems = () => {
-    fetch(`${apiURL}/api/v1/items`)
-    .then(res => res.json())
-    .then(items => {
-      this.setState({
-        items: items
-      })
-    })
-  }
+  // loadItems = () => {
+  //   fetch(`${apiURL}/api/v1/items`)
+  //   .then(res => res.json())
+  //   .then(items => {
+  //     this.setState({
+  //       items: items
+  //     })
+  //   })
+  // }
 
   createOffering = (item) => {
     fetch(`${apiURL}/api/v1/offerings`, {

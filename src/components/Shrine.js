@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../assets/css/Shrine.css'
 
-import Offering from '../components/Offering'
+import Offering from './Offering'
 
 class Shrine extends Component {
 

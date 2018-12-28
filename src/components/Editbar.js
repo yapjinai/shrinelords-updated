@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import '../assets/css/Editbar.css'
+//
+// // React-redux
+// import { connect } from 'react-redux'
+// import {
+//   setMouseMode,
+//   setQuery,
+//   setOriginalItems,
+//   setFilteredItems
+// } from '../actions'
 
 import Itembar from './Itembar'
 import Toolbar from './Toolbar'
 
-export default class Editbar extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      query: '',
-      originalItems: props.items,
-      filteredItems: props.items
-    }
-  }
 
+class Editbar extends Component {
   render() {
 
     return (
@@ -22,12 +23,12 @@ export default class Editbar extends Component {
           <input
             name='filter'
             placeholder='search'
-            value={this.state.query}
+            value={this.props.query}
             onChange={this.handleChange}
           />
         </div>
         <Itembar
-          items={this.state.filteredItems}
+          items={this.props.filteredItems}
           createOffering={this.props.createOffering}
         />
         <Toolbar
@@ -37,19 +38,12 @@ export default class Editbar extends Component {
     )
   }
 
-  componentDidUpdate() {
-    if (this.props.items !== this.state.originalItems) {
-      this.setState({
-        originalItems: this.props.items,
-        filteredItems: this.props.items
-      })
-    }
-  }
-
 ///////////////////////////////////////
 
+
+  // for filter query
   handleChange = (e) => {
-    const newFilteredItems = this.state.originalItems.filter(i => {
+    const newFilteredItems = this.props.originalItems.filter(i => {
       const nameWithSpaces = i.name.split('-').join(' ').toLowerCase()
 
       return (
@@ -57,9 +51,35 @@ export default class Editbar extends Component {
         i.tags.includes(e.target.value.toLowerCase())
       )
     })
-    this.setState({
-      query: e.target.value,
-      filteredItems: newFilteredItems
-    })
+
+    this.props.setQuery(e.target.value)
+    this.props.setFilteredItems(newFilteredItems)
   }
-}
+} // end component
+
+// ///////////////////////
+// // redux
+// ///////////////////////
+//
+// const mapStateToProps = (state) => ({
+//   query: state.query,
+//   originalItems: state.originalItems,
+//   filteredItems: state.filteredItems,
+// })
+//
+// const mapDispatchToProps = (dispatch) => ({
+//   setMouseMode: (mouseMode) => dispatch(setMouseMode(mouseMode)),
+//   setQuery: (query) => dispatch(setQuery(query)),
+//   setOriginalItems: (originalItems) => dispatch(setOriginalItems(originalItems)),
+//   setFilteredItems: (filteredItems) => dispatch(setFilteredItems(filteredItems)),
+// })
+//
+// const connectedEditbar = connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(Editbar)
+//
+//
+// export default connectedEditbar;
+
+export default Editbar

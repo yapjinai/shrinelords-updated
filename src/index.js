@@ -12,7 +12,7 @@ import rootReducer from './reducers'
 import './index.css';
 
 // Components
-import Show from './Show';
+import Show from './pages/Show';
 import About from './pages/About'
 import ShrinesIndex from './pages/ShrinesIndex'
 import Create from './pages/Create'
