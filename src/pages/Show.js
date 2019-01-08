@@ -7,6 +7,7 @@ import {
   setShrine
 } from '../actions'
 
+// components
 import ErrorPage from './ErrorPage';
 
 import Shrine from '../components/Shrine';

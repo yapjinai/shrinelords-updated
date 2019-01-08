@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import '../assets/css/Shrine.css'
 
+// React-redux
+import { connect } from 'react-redux'
+import {
+  setShrine
+} from '../actions'
+
+// components
 import Offering from './Offering'
 
 class Shrine extends Component {
@@ -37,4 +44,28 @@ class Shrine extends Component {
   }
 }
 
-export default Shrine;
+// export default Shrine;
+
+
+///////////////////////
+// redux
+///////////////////////
+
+const mapStateToProps = (state) => {
+  console.log('state', state);
+  return ({
+    shrine: state.shrine
+  })
+}
+
+const mapDispatchToProps = (dispatch) => ({
+  setShrine: (shrine) => dispatch(setShrine(shrine))
+})
+
+const connectedShrine = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Shrine)
+
+
+export default connectedShrine;

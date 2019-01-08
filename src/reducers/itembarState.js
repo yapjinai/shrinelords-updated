@@ -1,15 +1,3 @@
-export const mouseMode = (state = 'move', action) => {
-  switch (action.type) {
-    case 'SET_MOUSE_MODE':
-      return action.payload
-    default:
-      return state
-  }
-}
-
-//////////////////////////
-// itembar state
-
 export const query = (state = '', action) => {
   switch (action.type) {
     case 'SET_QUERY':
@@ -36,5 +24,3 @@ export const filteredItems = (state = [], action) => {
       return state
   }
 }
-
-// export { mouseMode, query, originalItems, filteredItems }

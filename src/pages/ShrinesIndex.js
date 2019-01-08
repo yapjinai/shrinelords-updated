@@ -15,10 +15,6 @@ const backsURL = "http://localhost:3000/api/v1/backs"
 const shrinesURL = 'http://localhost:3000/api/v1/shrines'
 
 class ShrinesIndex extends Component {
-  // state = {
-  //   shrines: [],
-  // }
-
   render(){
     return(
       <div className="container">

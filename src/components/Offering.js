@@ -2,20 +2,6 @@ import React, { Component } from 'react'
 import '../assets/css/Offering.css'
 
 class Offering extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      posX: 0,
-      posY: 0,
-      changeX: 0,
-      changeY: 0,
-      elmnt: null,
-      style: JSON.parse(this.props.offering.style),
-      item: {},
-    }
-  }
-  // this.setMouseMode()
-
   render() {
     this.setCursor()
     const offering = this.props.offering
@@ -36,12 +22,6 @@ class Offering extends Component {
       </div>
     )
   }
-
-  // <h1 style={{color: 'white', position: 'absolute', top: 0}}>
-  // {offering ? offering.zIndex : null}
-  // </h1>
-  
-  // {offering ? offering.id : null},
 
   componentDidMount() {
     this.setState({

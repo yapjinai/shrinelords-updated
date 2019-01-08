@@ -4,7 +4,8 @@ import { allShrines, allBacks } from './indexState'
 import { shrineName, backgroundId } from './createState'
 import { shrine } from './showState'
 
-import { mouseMode, query, originalItems, filteredItems } from './editbarState'
+import { mouseMode } from './toolbarState'
+import { query, originalItems, filteredItems } from './itembarState'
 import { expanded } from './navbarState'
 
 export default combineReducers({

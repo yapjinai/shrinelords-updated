@@ -28,11 +28,14 @@ export const setShrine = (payload) => ({
 })
 
 //////////////////////
-// editbar
+// toolbar
 export const setMouseMode = (payload) => ({
   type: 'SET_MOUSE_MODE',
   payload: payload
 })
+
+//////////////////////
+// itembar
 export const setQuery = (payload) => ({
   type: 'SET_QUERY',
   payload: payload
@@ -45,45 +48,6 @@ export const setFilteredItems = (payload) => ({
   type: 'SET_FILTERED_ITEMS',
   payload: payload
 })
-
-// function createAction(reducerName) {
-//   let type
-//   switch (reducerName) {
-//     case 'allShrines':
-//       type = 'SET_ALL_SHRINES'
-//     break;
-//     case 'allBacks':
-//       type = 'SET_ALL_BACKS'
-//     break;
-//     case 'shrineName':
-//       type = 'SET_SHRINE_NAME'
-//     break;
-//     case 'backgroundId':
-//       type = 'SET_BACKGROUND_ID'
-//     break;
-//     case 'shrine':
-//       type = 'SET_SHRINE'
-//     break;
-//     case 'mouseMode':
-//       type = 'SET_MOUSE_MODE'
-//     break;
-//     case 'query':
-//       type = 'SET_QUERY'
-//     break;
-//     case 'originalItems':
-//       type = 'SET_ORIGINAL_ITEMS'
-//     break;
-//     case 'filteredItems':
-//       type = 'SET_FILTERED_ITEMS'
-//     break;
-//     default:
-//     break;
-//   }
-//   return (const reducerName (payload) => ({
-//     type: type,
-//     payload: payload
-//   }))
-// }
 
 //////////////////////
 // navbar
