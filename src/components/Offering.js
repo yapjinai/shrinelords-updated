@@ -2,7 +2,23 @@ import React, { Component } from 'react'
 import '../assets/css/Offering.css'
 
 class Offering extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      posX: 0,
+      posY: 0,
+      changeX: 0,
+      changeY: 0,
+      elmnt: null,
+      style: JSON.parse(this.props.offering.style),
+      item: {},
+    }
+  }
+  // this.setMouseMode()
+
   render() {
+    console.log(this.state);
+
     this.setCursor()
     const offering = this.props.offering
     const mouseMode = this.props.mouseMode
@@ -22,6 +38,12 @@ class Offering extends Component {
       </div>
     )
   }
+
+  // <h1 style={{color: 'white', position: 'absolute', top: 0}}>
+  // {offering ? offering.zIndex : null}
+  // </h1>
+
+  // {offering ? offering.id : null},
 
   componentDidMount() {
     this.setState({
@@ -140,12 +162,12 @@ class Offering extends Component {
     const newStyle = {...this.state.style}
     const maxWidth = parseInt(this.state.item.size)
 
-    const windowHeight = window.innerHeight
-    const floor = document.querySelector('#floor')
-    const floorHeight = floor.getBoundingClientRect().height
-    const backgroundHeight = windowHeight - floorHeight
-
     if (this.state.elmnt) {
+      const windowHeight = window.innerHeight
+      const floor = document.querySelector('#floor')
+      const floorHeight = floor.getBoundingClientRect().height
+      const backgroundHeight = windowHeight - floorHeight
+
       const offsetTop = this.state.elmnt.offsetTop + this.state.elmnt.offsetHeight/2
       const offsetFromEdge = offsetTop - backgroundHeight
 
